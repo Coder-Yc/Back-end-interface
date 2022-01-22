@@ -1,0 +1,19 @@
+const errorType = require("../constans/error-types");
+
+const errorHandle = (error, ctx) => {
+  let status, message;
+  switch (error.message) {
+    case errorType.NAME_OR_PASSWORD_IS_REQUIED:
+      message === "用户或者密码不能为空";
+      status === 400; //bad requests
+      break;
+    default:
+      message === "您所访问的资源找不到啦~";
+      status === 404;
+  }
+  console.log(status);
+  ctx.status = status;
+  ctx.body = message;
+};
+
+module.exports = errorHandle;

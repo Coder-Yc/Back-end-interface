@@ -1,0 +1,1 @@
+const NAME_OR_PASSWORD_IS_REQUIED = "";

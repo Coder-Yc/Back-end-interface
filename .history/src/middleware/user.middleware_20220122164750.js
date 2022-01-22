@@ -1,0 +1,24 @@
+const errortype = require("../constans/error-types");
+const service = require("../services/user.services");
+
+const verifyuser = async (ctx, next) => {
+  //获取用户名密码
+  const { name, password } = ctx.request.body;
+  console.log(name);
+  //判断用户名密码
+  if (!name || !password) {
+    const error = new Error(errortype.NAME_OR_PASSWORD_IS_REQUIED);
+    ctx.app.emit("error", error, ctx);
+  }
+
+  // 判断用户名是否存在
+  const result = await service.getUserByname(name);
+  // console.log(result);
+  if (result.length === 1) {
+    const error = new Error(errortype.USER_ALREADY_EXITS);
+    ctx.app.emit("error", error, ctx);
+  }
+  await next();
+};
+
+module.exports = verifyuser;
