@@ -1,0 +1,8 @@
+const crypto = require("crypto");
+const md5Password = (password) => {
+  const md5 = crypto.createHash("md5");
+  return md5.update(password, "utf-8").digest("hex");
+  return;
+};
+
+module.exports = md5Password;
