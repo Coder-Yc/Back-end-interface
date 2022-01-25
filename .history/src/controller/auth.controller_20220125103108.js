@@ -1,0 +1,11 @@
+const jwt = require("jsonwebtoken");
+const { PRIVSTE_KEY, PUBLIC_KEY } = require("../app/config");
+class authController {
+  async login(ctx, next) {
+    const { id, name } = ctx.request.body;
+
+    ctx.response.body = `欢迎回来${name}`;
+  }
+}
+
+module.exports = new authController();
