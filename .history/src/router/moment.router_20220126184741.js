@@ -1,5 +1,5 @@
 const Router = require("koa-router");
-const IsExistslabels = require("../middleware/label.middleware");
+const { IsExistslabels } = require("../middleware/label.middleware");
 const {
   verifyAuth,
   verifyPermission,

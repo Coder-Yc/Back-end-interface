@@ -7,7 +7,6 @@ const userRouter = require("../router/user.route");
 const authRouter = require("../router/auth.router");
 const momentRouter = require("../router/moment.router");
 const commentRouter = require("../router/comment.router");
-const labelRouter = require("../router/label.router");
 
 app.use(bodyparser());
 app.use(userRouter.routes());
@@ -23,7 +22,6 @@ app.use(commentRouter.routes());
 app.use(commentRouter.allowedMethods());
 
 app.use(labelRouter.routes());
-app.use(labelRouter.allowedMethods());
 
 app.on("error", errorHandle);
 

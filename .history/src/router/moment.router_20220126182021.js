@@ -1,5 +1,4 @@
 const Router = require("koa-router");
-const IsExistslabels = require("../middleware/label.middleware");
 const {
   verifyAuth,
   verifyPermission,
@@ -23,7 +22,8 @@ momentRouter.post(
   "/:momentID/labels",
   verifyAuth,
   verifyPermission,
-  IsExistslabels
+  IsExistslabels,
+  addlabels
 );
 
 module.exports = momentRouter;

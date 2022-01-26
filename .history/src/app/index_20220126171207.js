@@ -7,7 +7,6 @@ const userRouter = require("../router/user.route");
 const authRouter = require("../router/auth.router");
 const momentRouter = require("../router/moment.router");
 const commentRouter = require("../router/comment.router");
-const labelRouter = require("../router/label.router");
 
 app.use(bodyparser());
 app.use(userRouter.routes());

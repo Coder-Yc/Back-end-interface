@@ -38,9 +38,10 @@ class MomentController {
   }
 
   async addlabels(ctx, next) {
+    console.log("12");
     const momentId = ctx.params.momentId;
     const { labels } = ctx.request.body;
-    // console.log(labels);
+    console.log(labels);
   }
 }
 module.exports = new MomentController();
